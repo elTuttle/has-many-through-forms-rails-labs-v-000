@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
 
   def user=(user1)
     user = User.find_or_create_by(user1)
-    self.categories << category
+    self.user = user
   end
 
 end
