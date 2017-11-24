@@ -3,4 +3,9 @@
 <%@post.comments.each do |comment|%>
   <p><%= comment.content %><p>
   <p><%= link_to comment.user.username, user_path(comment.user) %></p>
-<%end%> 
+<%end%>
+<%= form_for @post do |f| %> 
+  <%= f.fields_for :comments, post.comments.build do |comments_fields| %>
+    <%= categories_fields.text_field :name %>
+  <% end %>
+<%end%>
