@@ -4,7 +4,9 @@
     <%= category.name %>,
 <%end%></h5>
 <%@post.users.each do |user|%>
-
+  <%user.comments.each do |comment|%>
+    <%=comment.content%>
+  <%end%>
   <p><%= link_to user.username, user_path(user) %></p>
 <%end%>
 <%= form_for @post do |f| %>
