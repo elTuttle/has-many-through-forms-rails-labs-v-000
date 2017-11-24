@@ -7,7 +7,7 @@
   <p><%= comment.content %><p>
   <p><%= link_to comment.user.username, user_path(comment.user) %></p>
 <%end%>
-<%@post.commments.users.each do |user|%>
+<%@post.commments.user.each do |user|%>
   <p><%= link_to comment.user.username, user_path(comment.user) %></p>
 <%end%>
 <%= form_for @post do |f| %>
