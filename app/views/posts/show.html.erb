@@ -7,6 +7,9 @@
   <p><%= comment.content %><p>
   <p><%= link_to comment.user.username, user_path(comment.user) %></p>
 <%end%>
+<%@post.commments.users.each do |user|%>
+  <p><%= link_to comment.user.username, user_path(comment.user) %></p>
+<%end%>
 <%= form_for @post do |f| %>
   <%= f.fields_for :comments, @post.comments.build do |comments| %>
     <%= comments.text_field :content %>
