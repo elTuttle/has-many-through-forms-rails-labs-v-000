@@ -1,5 +1,8 @@
 <h1><%= @post.title %></h1>
 <h3><%= @post.content %></h3>
+<h5><%@post.categories.each do |category|%>
+    <%= category.name %>, 
+<%end%></h5>
 <%@post.comments.each do |comment|%>
   <p><%= comment.content %><p>
   <p><%= link_to comment.user.username, user_path(comment.user) %></p>
