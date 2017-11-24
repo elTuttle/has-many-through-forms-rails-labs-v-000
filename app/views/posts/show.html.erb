@@ -3,7 +3,7 @@
 <h5><%@post.categories.each do |category|%>
     <%= category.name %>,
 <%end%></h5>
-<%@post.comments.users.each do |user|%>
+<%@post.users.each do |user|%>
 
   <p><%= link_to user.username, user_path(user) %></p>
 <%end%>
