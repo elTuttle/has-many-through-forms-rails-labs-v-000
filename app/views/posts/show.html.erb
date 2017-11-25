@@ -5,10 +5,13 @@
 <%end%></h5>
 <%comment_users = []%>
 <%@post.users.each do |user|%>
-  <%user.comments.each do |comment|%>
-    <%=comment.content%>
+  <%if !comment_users.contain?(user)%>
+    <%user.comments.each do |comment|%>
+      <%=comment.content%>
+    <%end%>
+    <p><%= link_to user.username, user_path(user) %></p>
+    <% comment_users << user %>
   <%end%>
-  <p><%= link_to user.username, user_path(user) %></p>
 <%end%>
 <%= form_for @post do |f| %>
   <%= f.fields_for :comment, @post.comments.build do |comment| %>
