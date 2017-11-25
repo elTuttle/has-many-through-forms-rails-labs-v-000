@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    comment = Comment.create(comment_params)
-    comment.user = User.find(params[:user_id])
-    comment.save
+    binding.pry
     redirect_to post_path(comment.post_id)
   end
 
