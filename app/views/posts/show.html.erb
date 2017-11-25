@@ -3,6 +3,7 @@
 <h5><%@post.categories.each do |category|%>
     <%= category.name %>,
 <%end%></h5>
+<%comment_users = []%>
 <%@post.users.each do |user|%>
   <%user.comments.each do |comment|%>
     <%=comment.content%>
