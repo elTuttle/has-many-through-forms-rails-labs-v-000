@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     binding.pry
+    if params[:comment][:user_attributes][:username] == ""
+    else
+    end
     redirect_to post_path(comment.post_id)
   end
 
