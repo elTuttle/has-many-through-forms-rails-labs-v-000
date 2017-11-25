@@ -1,6 +1,6 @@
 <% @categories.each do |category| %>
   <h1><%=category.name%></h1>
-  <%category.post.each do |post|%>
+  <%category.posts.each do |post|%>
     <h3><%=link_to post.title, post_path(post)%></h3>
   <%end%>
 <%end%>
