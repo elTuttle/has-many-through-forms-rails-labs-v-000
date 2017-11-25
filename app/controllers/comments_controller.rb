@@ -2,9 +2,9 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(comment_params)
-    if comment.user.username == ""
-      comment.user = User.find(params[:user_id])
-    end
+    #if comment.user.username == ""
+    #  comment.user = User.find(params[:user_id])
+    #end
     comment.save
     redirect_to post_path(comment.post_id)
   end
