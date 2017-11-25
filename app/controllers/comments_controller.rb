@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(comment_params)
-    binding.pry
+    if comment.user.username == ""
+    end
     redirect_to post_path(comment.post_id)
   end
 
